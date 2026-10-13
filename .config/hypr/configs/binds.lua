@@ -7,10 +7,16 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
 local browser	  = "brave"
+local launcher    = "rofi -show drun"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+---------------------
+------ Custom -------
+---------------------
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + dead_circumflex", hl.dsp.exec_cmd(launcher))
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
