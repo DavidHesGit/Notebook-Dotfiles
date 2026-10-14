@@ -33,15 +33,15 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
 -- Dwindle Layout Movement binds
 
-hl.bind(mainMod .. " + SHIFT + Left",   hl.dsp.window.move({direction = "l"}))
-hl.bind(mainMod .. " + SHIFT + Up",     hl.dsp.window.move({direction = "u"}))
-hl.bind(mainMod .. " + SHIFT + Down",   hl.dsp.window.move({direction = "d"}))
-hl.bind(mainMod .. " + SHIFT + Right",  hl.dsp.window.move({direction = "r"}))
+hl.bind(mainMod .. " + ALT + Left",   hl.dsp.window.move({direction = "l"}))
+hl.bind(mainMod .. " + ALT + Up",     hl.dsp.window.move({direction = "u"}))
+hl.bind(mainMod .. " + ALT + Down",   hl.dsp.window.move({direction = "d"}))
+hl.bind(mainMod .. " + ALT + Right",  hl.dsp.window.move({direction = "r"}))
 
 -- Scrolling Layout Movement binds
 
-hl.bind(mainMod .. " + ALT + Left",  hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + ALT + Right",  hl.dsp.layout("swapcol r"))
+hl.bind(mainMod .. " + SHIFT + Left",  hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + SHIFT + Right",  hl.dsp.layout("swapcol r"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
