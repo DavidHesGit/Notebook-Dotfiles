@@ -10,9 +10,15 @@
 
 window#waybar {
     background:transparent;
-    background-color: @bg5;
+    border: none;
+    box-shadow: none;
+
     color: @fg0;
+}
+
+window#waybar > box {
     border-radius: 0 0 10px 10px;
+    background-color: @bg5;
 }
 
 #workspaces {
