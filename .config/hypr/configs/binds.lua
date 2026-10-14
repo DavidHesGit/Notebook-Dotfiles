@@ -11,6 +11,8 @@ local launcher    = "rofi -show drun"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("/home/david/.config/waybar/scripts/launch.sh"))
+
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + dead_circumflex", hl.dsp.exec_cmd(launcher))
 
