@@ -7,7 +7,7 @@ require("configs.decorations")
 require("configs.windowrules")
 require("configs.environment")
 require("configs.permissions")
-
+require("configs.layout")
 
 
 

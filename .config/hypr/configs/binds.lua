@@ -11,9 +11,6 @@ local launcher    = "rofi -show drun"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
----------------------
------- Custom -------
----------------------
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + dead_circumflex", hl.dsp.exec_cmd(launcher))
 
@@ -21,7 +18,7 @@ hl.bind(mainMod .. " + dead_circumflex", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + Escape", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -33,6 +30,18 @@ hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+-- Dwindle Layout Movement binds
+
+hl.bind(mainMod .. " + SHIFT + Left",   hl.dsp.window.move({direction = "l"}))
+hl.bind(mainMod .. " + SHIFT + Up",     hl.dsp.window.move({direction = "u"}))
+hl.bind(mainMod .. " + SHIFT + Down",   hl.dsp.window.move({direction = "d"}))
+hl.bind(mainMod .. " + SHIFT + Right",  hl.dsp.window.move({direction = "r"}))
+
+-- Scrolling Layout Movement binds
+
+hl.bind(mainMod .. " + ALT + Left",  hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + ALT + Right",  hl.dsp.layout("swapcol r"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -49,6 +58,13 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+
+-- Resize windows
+hl.bind(mainMod .. " + Comma", hl.dsp.layout("colresize -0.1"))
+hl.bind(mainMod .. " + Period", hl.dsp.layout("colresize +0.1"))
+
+hl.bind(mainMod .. " + M", hl.dsp.layout("colresize 1"))
+hl.bind(mainMod .. " + N", hl.dsp.layout("colresize 0.5"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
